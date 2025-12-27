@@ -89,9 +89,8 @@ reportMissingTypeStubs = false
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 
-# uv-specific scripts for common tasks
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
     "pytest>=3.0.1",
     "ruff",
     "pyright",

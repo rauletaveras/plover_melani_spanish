@@ -13,7 +13,7 @@ def with_pydicts(fn):
 	def wrapper(bb, *args, **kwargs):
 		py_dict = load_dictionary(DICTIONARIES_ROOT + "/spanish_mqd.py")
 		bb.dictionary.set_dicts(bb.dictionary.dicts + [py_dict])
-		fn(bb, *args, **kwargs)
+		return fn(bb, *args, **kwargs)
 
 	return wrapper
 
