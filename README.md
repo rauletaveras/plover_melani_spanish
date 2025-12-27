@@ -83,4 +83,3 @@ We use [SemVer](https://semver.org/).
 ## Changes ##
 
 [Changelog](https://github.com/nvdaes/plover_spanish_mqd/blob/main/CHANGELOG.md)
-
