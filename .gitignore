@@ -37,7 +37,6 @@ pip-delete-this-directory.txt
 
 # Unit test / coverage reports
 htmlcov/
-.tox/
 .coverage
 .coverage.*
 .cache
@@ -45,6 +44,7 @@ nosetests.xml
 coverage.xml
 *.cover
 .hypothesis/
+.pytest_cache/
 
 # Translations
 *.mo
@@ -97,8 +97,15 @@ ENV/
 # mkdocs documentation
 /site
 
-# mypy
-.mypy_cache/
+# Ruff
+.ruff_cache/
+
+# Pyright
+pyrightconfig.json
+
+# uv
+.uv/
+.python-version
 
 # Visual Studio Code
 .vscode/

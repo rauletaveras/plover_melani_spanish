@@ -1,0 +1,97 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plover_spanish_mqd"
+version = "2.2.0"
+description = "Support for plover in Spanish (Melany system)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "GNU General Public License v3 or later (GPLv3+)"}
+authors = [
+    {name = "Noelia Ruiz", email = "nrm1977@gmail.com"}
+]
+keywords = ["plover", "plover_plugin"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Plugins",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "plover~=4.0.0.dev10",
+    "plover_python_dictionary>=1,<2",
+]
+
+[project.urls]
+"Source Code" = "https://github.com/nvdaes/plover_spanish_mqd"
+"Issue Tracker" = "https://github.com/nvdaes/plover_spanish_mqd/issues"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=3.0.1",
+]
+lint = [
+    "ruff",
+]
+type = [
+    "pyright",
+]
+dev = [
+    "pytest>=3.0.1",
+    "ruff",
+    "pyright",
+    "pre-commit",
+]
+
+[project.entry-points."plover.system"]
+"Spanish MQD" = "plover_spanish_mqd.system"
+
+[tool.setuptools]
+zip-safe = true
+packages = ["plover_spanish_mqd"]
+include-package-data = true
+
+[tool.ruff]
+line-length = 200
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = [
+    "W191",  # indentation contains tabs
+    "W503",  # line break before binary operator
+    "E402",  # module level import not at top of file
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 15
+
+[tool.pyright]
+include = ["plover_spanish_mqd"]
+pythonVersion = "3.8"
+strictListInference = true
+strictDictionaryInference = true
+strictSetInference = true
+reportMissingTypeStubs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+# uv-specific scripts for common tasks
+[tool.uv]
+dev-dependencies = [
+    "pytest>=3.0.1",
+    "ruff",
+    "pyright",
+    "pre-commit",
+]
