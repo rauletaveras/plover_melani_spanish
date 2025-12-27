@@ -67,10 +67,12 @@ target-version = "py38"
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]
 ignore = [
-    "W191",  # indentation contains tabs
-    "W503",  # line break before binary operator
+    "W191",  # indentation contains tabs (this codebase uses tabs)
     "E402",  # module level import not at top of file
 ]
+
+[tool.ruff.format]
+indent-style = "tab"
 
 [tool.ruff.lint.mccabe]
 max-complexity = 15

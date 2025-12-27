@@ -1,16 +1,15 @@
-import unittest
-import os
 import json
+import os
+import unittest
 
-from plover_spanish_mqd import system
-from plover_spanish_mqd import spanish_mqd_single
+from plover_spanish_mqd import spanish_mqd_single, system
+
 from . import detectDuplicateKeys
 
 DICT = os.path.join(os.path.dirname(__file__), "..", "plover_spanish_mqd", "dictionaries", "user_es.json")
 
 
 class TestUser(unittest.TestCase):
-
 	def setUp(self):
 		self.keys = "".join(system.KEYS)
 		self.singleDict = spanish_mqd_single.dict

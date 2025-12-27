@@ -1,10 +1,9 @@
 import unittest
-from plover_spanish_mqd import spanish_mqd_single
-from plover_spanish_mqd import system
+
+from plover_spanish_mqd import spanish_mqd_single, system
 
 
 class TestSingle(unittest.TestCase):
-
 	def setUp(self):
 		self.keys = "".join(system.KEYS)
 		self.dict = spanish_mqd_single.dict

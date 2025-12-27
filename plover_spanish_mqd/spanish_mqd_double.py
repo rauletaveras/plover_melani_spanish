@@ -1,4 +1,5 @@
-from typing import Tuple, Dict
+from typing import Dict, Tuple
+
 from . import spanish_mqd_single
 
 LONGEST_KEY = 2
@@ -751,7 +752,7 @@ doubleStrokes: MainDict = {
 	"Vs": "avisa",
 	"Vsn": "avanza",
 	"Vst": "visita",
-	"Vstn": "varia"
+	"Vstn": "varia",
 }
 
 
@@ -773,7 +774,7 @@ adjs: MainDict = {
 	"numera": "numero",
 	"peligra": "peligro",
 	"respeta": "respetuo",
-	"trabaja": "trabajo"
+	"trabaja": "trabajo",
 }
 
 irregular: MainDict = {
@@ -806,7 +807,7 @@ irregular: MainDict = {
 	"proba": "prueb",
 	"recomenda": "recomiend",
 	"recorda": "recuerd",
-	"renova": "renuev"
+	"renova": "renuev",
 }
 
 

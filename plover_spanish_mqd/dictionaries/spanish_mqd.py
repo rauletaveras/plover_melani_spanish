@@ -1,10 +1,11 @@
 from plover_spanish_mqd import (
 	spanish_mqd_double as double,
+)
+from plover_spanish_mqd import (
 	spanish_mqd_single as single,
 )
 
-
-single.lastValue: str = ''
+single.lastValue: str = ""
 
 DICTIONARIES = [double, single]
 

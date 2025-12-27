@@ -1,21 +1,10 @@
-from typing import Tuple, Dict
+from typing import Dict, Tuple
 
 LONGEST_KEY = 1
 
 lastValue = ""
 
-numbers: Dict[str, str] = {
-	"S": "1",
-	"P": "2",
-	"T": "3",
-	"V": "4",
-	"I": "5",
-	"O": "0",
-	"c": "6",
-	"t": "7",
-	"p": "8",
-	"i": "9"
-}
+numbers: Dict[str, str] = {"S": "1", "P": "2", "T": "3", "V": "4", "I": "5", "O": "0", "c": "6", "t": "7", "p": "8", "i": "9"}
 
 MainDict = Dict[str, Tuple[str, str]]
 
@@ -12178,7 +12167,7 @@ def searchKey(dictionary, stroke):
 		if dictionary.get(searchKey) is not None:
 			searchKeyValue = dictionary.get(searchKey)[1]
 		if searchKeyValue == "":
-			searchKey = searchKey[:len(searchKey) - 1]
+			searchKey = searchKey[: len(searchKey) - 1]
 		else:
 			value += searchKeyValue
 			searchKeyValue = ""
