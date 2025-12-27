@@ -13,6 +13,8 @@ class TestDouble(unittest.TestCase):
 		self.dict = None
 
 	def test_keyOrder(self):
+		assert self.dict is not None
+		assert self.keys is not None
 		for k, v in self.dict.items():
 			prevIndex = -1
 			curIndex = -1

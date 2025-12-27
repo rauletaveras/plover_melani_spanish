@@ -13,6 +13,8 @@ class TestSingle(unittest.TestCase):
 		self.dict = None
 
 	def test_keyOrder(self):
+		assert self.dict is not None
+		assert self.keys is not None
 		for k, v in self.dict.items():
 			prevIndex = -1
 			curIndex = -1
@@ -22,6 +24,7 @@ class TestSingle(unittest.TestCase):
 				prevIndex = curIndex
 
 	def test_value(self):
+		assert self.dict is not None
 		keys = []
 		for k, v in self.dict.items():
 			for value in v:

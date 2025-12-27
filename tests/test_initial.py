@@ -20,6 +20,8 @@ class TestInitial(unittest.TestCase):
 		self.dict = None
 
 	def test_keyOrder(self):
+		assert self.dict is not None
+		assert self.keys is not None
 		for k, v in self.dict.items():
 			prevIndex = -1
 			curIndex = -1
@@ -33,9 +35,11 @@ class TestInitial(unittest.TestCase):
 				prevIndex = curIndex
 
 	def test_valueType(self):
+		assert self.dict is not None
 		for k, v in self.dict.items():
 			self.assertTrue(isinstance(v, str), k)
 
 	def test_ValueContent(self):
+		assert self.dict is not None
 		for k, v in self.dict.items():
 			self.assertFalse("//" in v, k)
