@@ -812,9 +812,10 @@ irregular: MainDict = {
 
 
 def lookup(key):
-	if doubleStrokes.get(key[0]) is None:
+	lastVal = doubleStrokes.get(key[0])
+	if lastVal is None:
 		raise KeyError
-	spanish_mqd_single.lastValue = doubleStrokes.get(key[0])
+	spanish_mqd_single.lastValue = lastVal
 	if len(key) == 1:
 		raise KeyError
 	if key[1] == "*":
@@ -822,11 +823,12 @@ def lookup(key):
 		return " "
 	value = spanish_mqd_single.searchKey(spanish_mqd_single.dict, key[1])
 	if spanish_mqd_single.lastValue.endswith("a") and value[0] in VOWELS:
-		if irregular.get(spanish_mqd_single.lastValue) and value in ("an ", "as ", "en ", "es "):
-			if irregular[spanish_mqd_single.lastValue].endswith("g") and value.startswith("e"):
-				value = irregular[spanish_mqd_single.lastValue] + "u" + value
+		irregVal = irregular.get(spanish_mqd_single.lastValue)
+		if irregVal and value in ("an ", "as ", "en ", "es "):
+			if irregVal.endswith("g") and value.startswith("e"):
+				value = irregVal + "u" + value
 			else:
-				value = irregular[spanish_mqd_single.lastValue] + value
+				value = irregVal + value
 		elif spanish_mqd_single.lastValue.endswith("ca") and (value[0] == "e" or value[0] == "é"):
 			value = spanish_mqd_single.lastValue[:-2] + "qu" + value
 		elif spanish_mqd_single.lastValue.endswith("ga") and value[0] in ("e", "é"):
@@ -835,14 +837,16 @@ def lookup(key):
 			value = spanish_mqd_single.lastValue[:-2] + "ü" + value
 		else:
 			value = spanish_mqd_single.lastValue[:-1] + value
-	elif adjs.get(spanish_mqd_single.lastValue) is not None and value[:2] in ("sa", "si", "sí", "so"):
-		value = adjs.get(spanish_mqd_single.lastValue) + value
-	elif spanish_mqd_single.lastValue[-1] in ("e", "o", "u") and value[0] in ("a", "á"):
-		value = spanish_mqd_single.lastValue + "zc" + value
-	elif spanish_mqd_single.lastValue.endswith("u") and value.startswith("t"):
-		value = spanish_mqd_single.lastValue + "c" + value
 	else:
-		value = spanish_mqd_single.lastValue + value
+		adjVal = adjs.get(spanish_mqd_single.lastValue)
+		if adjVal is not None and value[:2] in ("sa", "si", "sí", "so"):
+			value = adjVal + value
+		elif spanish_mqd_single.lastValue[-1] in ("e", "o", "u") and value[0] in ("a", "á"):
+			value = spanish_mqd_single.lastValue + "zc" + value
+		elif spanish_mqd_single.lastValue.endswith("u") and value.startswith("t"):
+			value = spanish_mqd_single.lastValue + "c" + value
+		else:
+			value = spanish_mqd_single.lastValue + value
 	value = value.replace("ze", "ce")
 	value = value.replace("zé", "cé")
 	if not value.endswith(" "):

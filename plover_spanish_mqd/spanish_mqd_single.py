@@ -12194,10 +12194,13 @@ def lookup(key):
 				value = value[::-1]
 			else:
 				value = "{firstDigit}{secondDigit}".format(firstDigit=value, secondDigit=value)
-	if dict.get(key[0]) is not None:
-		value = dict.get(key[0])[0]
+	dictVal = dict.get(key[0])
+	if dictVal is not None:
+		value = dictVal[0]
 	if value == "":
 		value = searchKey(dict, key[0])
+	if value is None:
+		raise KeyError
 	if value.endswith(" "):
 		return value
 	if value.isdigit() or value.endswith("000"):
