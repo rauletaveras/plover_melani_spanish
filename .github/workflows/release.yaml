@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      '*'
+      - '*'
 
 jobs:
   release:
@@ -35,4 +35,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         prerelease: ${{ endsWith(github.ref, '-dev') }}
-        body_path: changelog.md        
+        body_path: changelog.md
