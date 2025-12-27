@@ -12,9 +12,13 @@ repos:
       - id: ruff-format
 
   - repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.390
+    rev: v1.1.407
     hooks:
       - id: pyright
+        additional_dependencies:
+          - plover~=4.0.0.dev10
+          - plover_python_dictionary>=1,<2
+          - plover_build_utils
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
