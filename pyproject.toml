@@ -7,7 +7,7 @@ name = "plover_spanish_mqd"
 version = "2.2.0"
 description = "Support for plover in Spanish (Melany system)"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10,<3.14"
 license = {text = "GNU General Public License v3 or later (GPLv3+)"}
 authors = [
     {name = "Noelia Ruiz", email = "nrm1977@gmail.com"}
@@ -25,9 +25,10 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
 dependencies = [
-    "plover~=4.0.0.dev10",
+    "plover~=5.3.0",
     "plover_python_dictionary>=1,<2",
 ]
 
@@ -62,7 +63,7 @@ include-package-data = true
 
 [tool.ruff]
 line-length = 200
-target-version = "py38"
+target-version = "py313"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]
@@ -79,7 +80,7 @@ max-complexity = 15
 
 [tool.pyright]
 include = ["plover_spanish_mqd"]
-pythonVersion = "3.8"
+pythonVersion = "3.13"
 strictListInference = true
 strictDictionaryInference = true
 strictSetInference = true
