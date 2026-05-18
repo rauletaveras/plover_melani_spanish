@@ -102,7 +102,6 @@ pyrightconfig.json
 
 # uv
 .uv/
-.python-version
 
 # Visual Studio Code
 .vscode/
