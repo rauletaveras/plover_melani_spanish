@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nvdaes/plover_spanish_mqd)
 - Minor improvements in dictionary contents
 
-## [2.2.0](https://github.com/nvdaes/plover_spanish_mqd/releases/tag/v2.2.0) - 2026-05-18
+## [3.0.0](https://github.com/nvdaes/plover_spanish_mqd/releases/tag/v3.0.0) - 2026-05-18
 
 ### Changed
 - **Migrated build system from tox to uv** for faster dependency management
