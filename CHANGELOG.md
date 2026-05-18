@@ -8,18 +8,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased](https://github.com/nvdaes/plover_spanish_mqd)
 - Minor improvements in dictionary contents
 
-## [2.2.0](https://github.com/nvdaes/plover_spanish_mqd/releases/tag/v2.2.0) - 2025-12-27
+## [2.2.0](https://github.com/nvdaes/plover_spanish_mqd/releases/tag/v2.2.0) - 2026-05-18
 
 ### Changed
 - **Migrated build system from tox to uv** for faster dependency management
 - **Replaced flake8 with ruff** for significantly faster linting and code formatting
 - **Replaced mypy with pyright** for improved type checking performance
 - **Modernized project configuration** by consolidating into pyproject.toml
-- **Updated Python version support** - Now requires Python 3.8+ (dropped EOL 3.6 and 3.7)
+- **Updated Python version support** - Now requires Python 3.13+ (dropped EOL 3.6 and 3.7)
 - **Added support for Python 3.11 and 3.12**
 - **Added pre-commit hooks** for automated code quality checks
 - **Updated GitHub Actions workflows** to use uv instead of tox
 - **Removed obsolete configuration files** (tox.ini, mypy.ini, setup.cfg)
+- Minor improvements in dictionary contents.
 
 ### Developer Experience
 - All development tasks now use uv: `uv run pytest`, `uv run ruff check`, `uv run pyright`
