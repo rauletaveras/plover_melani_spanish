@@ -469,7 +469,7 @@ wheels = [
 
 [[package]]
 name = "plover-spanish-mqd"
-version = "2.2.0"
+version = "3.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "plover" },
@@ -503,7 +503,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "plover", specifier = "~=5.3.0" },
+    { name = "plover", specifier = ">=5.3.0,<5.5.0" },
     { name = "plover-python-dictionary", specifier = ">=1,<2" },
     { name = "pre-commit", marker = "extra == 'dev'" },
     { name = "pyright", marker = "extra == 'dev'" },
