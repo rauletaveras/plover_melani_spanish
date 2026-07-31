@@ -1,12 +1,14 @@
 # vim: set fileencoding=utf-8 :
 
+# Spanish Melani system
+
 # SPCTHVRIA*EOcsthprieao
 KEYS = (
     "S-",
     "P-",
     "C-",
     "T-",
-    "N-",
+    "H-",
     "V-",
     "R-",
     "I-",
@@ -16,7 +18,7 @@ KEYS = (
     "-c",
     "-s",
     "-t",
-    "-n",
+    "-h",
     "-p",
     "-r",
     "-i",
@@ -50,7 +52,7 @@ KEYMAPS = {
         "P-": "T-",
         "C-": "K-",
         "T-": "P-",
-        "N-": "W-",
+        "H-": "W-",
         "V-": "H-",
         "R-": "R-",
         "I-": "A-",
@@ -61,7 +63,7 @@ KEYMAPS = {
         "-c": "-F",
         "-s": "-R",
         "-t": "-P",
-        "-n": "-B",
+        "-h": "-B",
         "-p": "-L",
         "-r": "-G",
         "-i": "-T",
@@ -76,7 +78,7 @@ KEYMAPS = {
         "P-": "w",
         "C-": "s",
         "T-": "e",
-        "N-": "d",
+        "H-": "d",
         "V-": "r",
         "R-": "f",
         "I-": "c",
@@ -87,7 +89,7 @@ KEYMAPS = {
         "-c": "u",
         "-s": "j",
         "-t": "i",
-        "-n": "k",
+        "-h": "k",
         "-p": "o",
         "-r": "l",
         "-i": "p",
@@ -104,7 +106,7 @@ KEYMAPS = {
         "P-": "T",
         "C-": "K",
         "T-": "P",
-        "N-": "W",
+        "H-": "W",
         "V-": "H",
         "R-": "R",
         "I-": "A",
@@ -115,7 +117,7 @@ KEYMAPS = {
         "-c": "F",
         "-s": "Q",
         "-t": "N",
-        "-n": "B",
+        "-h": "B",
         "-p": "L",
         "-r": "G",
         "-i": "Y",
@@ -130,7 +132,7 @@ KEYMAPS = {
         "P-": "T-",
         "C-": "K-",
         "T-": "P-",
-        "N-": "W-",
+        "H-": "W-",
         "V-": "H-",
         "R-": "R-",
         "I-": "A-",
@@ -141,7 +143,7 @@ KEYMAPS = {
         "-c": "-F",
         "-s": "-R",
         "-t": "-P",
-        "-n": "-B",
+        "-h": "-B",
         "-p": "-L",
         "-r": "-G",
         "-i": "-T",
@@ -158,7 +160,7 @@ KEYMAPS = {
         "P-": "T-",
         "C-": "K-",
         "T-": "P-",
-        "N-": "W-",
+        "H-": "W-",
         "V-": "H-",
         "R-": "R-",
         "I-": "A-",
@@ -169,7 +171,7 @@ KEYMAPS = {
         "-c": "-F",
         "-s": "-R",
         "-t": "-P",
-        "-n": "-B",
+        "-h": "-B",
         "-p": "-L",
         "-r": "-G",
         "-i": "-T",
@@ -183,7 +185,7 @@ KEYMAPS = {
         "P-": "T-",
         "C-": "K-",
         "T-": "P-",
-        "N-": "W-",
+        "H-": "W-",
         "V-": "H-",
         "R-": "R-",
         "I-": "A-",
@@ -194,7 +196,7 @@ KEYMAPS = {
         "-c": "-F",
         "-s": "-R",
         "-t": "-P",
-        "-n": "-B",
+        "-h": "-B",
         "-p": "-L",
         "-r": "-G",
         "-i": "-T",
@@ -207,5 +209,12 @@ KEYMAPS = {
 
 KEYMAPS["Stentura (Italian version)"] = KEYMAPS["Stentura"]
 
+DICTIONARIES_ROOT = "asset:plover_melani_spanish:dictionaries"
+
 DEFAULT_DICTIONARIES = (
-    "user_es.json", "punctuation.json", "melani_es_reference.json")
+    "user.json",
+    DICTIONARIES_ROOT + "/melani.json",
+    DICTIONARIES_ROOT + "/prefijos.json",
+    DICTIONARIES_ROOT + "/sufijos.json",
+    DICTIONARIES_ROOT + "/puntuacion.json",
+)
