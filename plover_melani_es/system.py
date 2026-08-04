@@ -13,6 +13,7 @@ KEYS = (
     "R-",
     "I-",
     "A-",
+    "*",
     "-E",
     "-O",
     "-c",
@@ -25,7 +26,6 @@ KEYS = (
     "-e",
     "-a",
     "-o",
-    "*",
     "#",
 )
 
@@ -209,12 +209,12 @@ KEYMAPS = {
 
 KEYMAPS["Stentura (Italian version)"] = KEYMAPS["Stentura"]
 
-DICTIONARIES_ROOT = "asset:plover_melani_spanish:dictionaries"
+DICTIONARIES_ROOT = "asset:plover_melani_es:dictionaries"
 
 DEFAULT_DICTIONARIES = (
     "user.json",
-    DICTIONARIES_ROOT + "/melani.json",
-    DICTIONARIES_ROOT + "/prefijos.json",
-    DICTIONARIES_ROOT + "/sufijos.json",
-    DICTIONARIES_ROOT + "/puntuacion.json",
+    "melani.json",
+    "prefijos.json",
+    "sufijos.json",
+    "puntuacion.json"
 )
