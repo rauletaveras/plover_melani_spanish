@@ -212,7 +212,7 @@ KEYMAPS["Stentura (Italian version)"] = KEYMAPS["Stentura"]
 DICTIONARIES_ROOT = "asset:plover_melani_es:dictionaries"
 
 DEFAULT_DICTIONARIES = (
-    "user.json",
+    "user_es.json",
     "melani.json",
     "prefijos.json",
     "sufijos.json",
