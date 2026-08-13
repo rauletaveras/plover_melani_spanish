@@ -33,11 +33,22 @@ IMPLICIT_HYPHEN_KEYS = KEYS
 
 SUFFIX_KEYS = ()
 
-NUMBER_KEY = None
+NUMBER_KEY = '#'
 
-NUMBERS = {}
+NUMBERS = {
+    'S-': '1-',
+    'P-': '2-',
+    'T-': '3-',
+    'V-': '4-',
+    'I-': '5-',
+    '-O': '0-',
+    '-c': '-6',
+    '-t': '-7',
+    '-p': '-8',
+    '-i': '-9',
+}
 
-UNDO_STROKE_STENO = ""
+UNDO_STROKE_STENO = "*"
 
 ORTHOGRAPHY_RULES = []
 
@@ -213,8 +224,5 @@ DICTIONARIES_ROOT = "asset:plover_melani_es:dictionaries"
 
 DEFAULT_DICTIONARIES = (
     "user_es.json",
-    "melani.json",
-    "prefijos.json",
-    "sufijos.json",
-    "puntuacion.json"
+    DICTIONARIES_ROOT + "/melani_orthography_es.py"
 )
