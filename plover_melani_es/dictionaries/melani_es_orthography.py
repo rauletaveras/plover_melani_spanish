@@ -1,4 +1,4 @@
-from plover_melani.theory import Stroke, Theory
+from plover_melani_es.theory import Stroke, Theory
 
 
 theory = Theory()
@@ -32,11 +32,11 @@ def lookup(key):
         
     return translation
 
-# def reverse_lookup(text):
-#     stroke_list = theory.strokes_from_text(text)
-#     if not stroke_list:
-#         return []
-#     return [tuple(str(s) for s in stroke_list)]
+def reverse_lookup(text):
+    stroke_list = theory.strokes_from_text(text)
+    if not stroke_list:
+        return []
+    return [tuple(str(s) for s in stroke_list)]
 
 # }}}
 

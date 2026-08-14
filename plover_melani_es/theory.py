@@ -8,7 +8,7 @@ from pkg_resources import resource_stream
 from plover.oslayer.config import CONFIG_DIR
 from plover_stroke import BaseStroke
 
-from plover_melani import system
+from plover_melani_es import system
 
 
 class Stroke(BaseStroke):
