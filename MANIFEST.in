@@ -1,1 +1,4 @@
-include plover_melani_es/dictionaries/*
+include plover_melani_es/dictionaries/melani_es_mapping.json
+include plover_melani_es/dictionaries/melani_es_orthography.py
+include plover_melani_es/dictionaries/briefs.json
+include pyproject.toml

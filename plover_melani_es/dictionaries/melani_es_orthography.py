@@ -12,12 +12,12 @@ theory = Theory()
 LONGEST_KEY = 1 
 
 def lookup(key):
-"""
-From API reference for `key` (`outline: Tuple[str]`): 
-Given an outline which is a tuple of steno strokes, returns the translation for this outline, 
-or raises a KeyError when no translation is available. 
-The translation should be in Plover’s translation language.
-"""
+    """
+    From API reference for `key` (`outline: Tuple[str]`): 
+    Given an outline which is a tuple of steno strokes, returns the translation for this outline, 
+    or raises a KeyError when no translation is available. 
+    The translation should be in Plover’s translation language.
+    """
 
     assert len(key) <= LONGEST_KEY
     try:

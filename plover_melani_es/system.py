@@ -224,5 +224,6 @@ DICTIONARIES_ROOT = "asset:plover_melani_es:dictionaries"
 
 DEFAULT_DICTIONARIES = (
     "user_es.json",
-    DICTIONARIES_ROOT + "/melani_orthography_es.py"
+    DICTIONARIES_ROOT + "/briefs.json",
+    "melani_es_orthography.py"
 )
