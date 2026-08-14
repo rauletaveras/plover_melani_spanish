@@ -1,12 +1,28 @@
 [project]
-name="plover_melani_es"
-version="0.0.0"
+name = "plover_melani_es"
+version = "0.0.0"
 authors = [
-    {name="Raúl E. Taveras", email="raul@raultaveras.online" }
+    {name = "Raúl E. Taveras", email = "raul@raultaveras.online"}
 ]
 description = "Simple implementation of the Melani system for Spanish stenography according to public information."
 readme = "README.md"
+keywords = ["plover", "plover_plugin", "spanish"]
+dependencies = [
+    "plover>=4.0.0.dev10",
+    "plover_stroke>=0.4.0",
+    "plover_python_dictionary>=0.5.6",
+]
+
+[project.entry-points."plover.system"]
+"MelaniES" = "plover_melani_es.system"
 
 [build-system]
 requires = ["setuptools >= 77.0.3"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+zip-safe = true
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["plover_melani_es", "plover_melani_es.dictionaries"]
