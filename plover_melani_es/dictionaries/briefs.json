@@ -38,10 +38,10 @@
     "PCTHVR": "que",
     "PCTHVR*": "qué",
     "PCTHVRh": "que",
-    "Nco": "necesario",
-    "Nca": "necesaria",
-    "Nceo": "necesarios",
-    "Ncia": "necesarias",
-    "Pha": "persona",
-    "Phia": "personas"
+    "Hco": "necesario",
+    "Hca": "necesaria",
+    "Hceo": "necesarios",
+    "Hcia": "necesarias",
+    "Hha": "persona",
+    "Hhia": "personas"
 }

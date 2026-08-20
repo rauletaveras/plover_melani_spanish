@@ -17,8 +17,10 @@ I would only be too happy to make changes.
 The Melani system in the reference uses the `eo` chord sometimes to mark "-os" and sometimes to mark a translations as ending with a consonant.
 This "-os" outputting function was shared with `ieao`, and there wasn't an obvious pattern explained where I could find.
 Some analysis of the example text might reveal some ergonomic principle.
-I decided to keep `eo` as "-os" _only_, for symmetry with `ia` ("-as"),
-and make `ieao`, a chord not elsewhere employed, mark a translation as ended instead.
+I decided to keep `eo` as "-os" _only_, for symmetry with `ia` ("-as").
+For consonant-final words I decided to use `ao`, 
+formerly used for "u", which is a much rarer ending.
+"u" is instead done by "ieao", a chord seemingly not elsewhere employed.
 
 ## Layout
 
