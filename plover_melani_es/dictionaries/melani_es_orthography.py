@@ -11,17 +11,17 @@ theory = Theory()
 # by only using this dictionary when looking up outlines this length or shorter.
 LONGEST_KEY = 1 
 
-def lookup(key):
+def lookup(outline):
     """
-    From API reference for `key` (`outline: Tuple[str]`): 
+    From API reference for `lookup` (`outline: Tuple[str]`): 
     Given an outline which is a tuple of steno strokes, returns the translation for this outline, 
     or raises a KeyError when no translation is available. 
     The translation should be in Plover’s translation language.
     """
 
-    assert len(key) <= LONGEST_KEY
+    assert len(outline) <= LONGEST_KEY
     try:
-        stroke_list = [Stroke(s) for s in key] # Creates a list of `plover_stroke.BaseStroke` out of the input outline.
+        stroke_list = [Stroke(s) for s in outline] # Creates a list of `plover_stroke.BaseStroke` out of the input outline.
     except ValueError as e:
         raise KeyError from e
     translation = ''
