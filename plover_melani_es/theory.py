@@ -110,46 +110,46 @@ class Theory:
             text += ' '
         return text
 
-    # def strokes_from_text(self, text):
-    #     if not text:
-    #         return []
-    #     if text[-1] in 'ieao':
-    #         text = text + ' '
-    #     leftover_text = text
-    #     stroke_list = []
-    #     part_list = []
-    #     while len(leftover_text) > 0:
-    #         # Find candidate parts.
-    #         combo_list = []
-    #         part = leftover_text[0:self._max_word_part_len]
-    #         while len(part) > 0:
-    #             combo_list.extend(self._word_parts.get(part, ()))
-    #             part = part[:-1]
-    #         if len(combo_list) == 0:
-    #             return ()
-    #         # First try to extend current stroke.
-    #         part = None
-    #         if stroke_list:
-    #             stroke = stroke_list[-1]
-    #             for combo in combo_list:
-    #                 if stroke.is_prefix(combo):
-    #                     # Check if we're not changing the translation.
-    #                     combo_part = self.strokes_to_text((combo,))
-    #                     wanted = self.strokes_to_text((stroke,)) + combo_part
-    #                     result = self.strokes_to_text((stroke + combo,))
-    #                     if wanted != result:
-    #                         continue
-    #                     part = combo_part
-    #                     stroke_list[-1] += combo
-    #                     part_list[-1] += part
-    #                     break
-    #         # Start a new stroke
-    #         if part is None:
-    #             combo = combo_list[0]
-    #             part = self.strokes_to_text((combo,))
-    #             stroke_list.append(combo)
-    #             part_list.append(part)
-    #         assert len(part) > 0
-    #         leftover_text = leftover_text[len(part):]
-    #     assert len(stroke_list) == len(part_list)
-    #     return stroke_list
+    def strokes_from_text(self, text):
+        if not text:
+            return []
+        if text[-1] in 'ieao':
+            text = text + ' '
+        leftover_text = text
+        stroke_list = []
+        part_list = []
+        while len(leftover_text) > 0:
+            # Find candidate parts.
+            combo_list = []
+            part = leftover_text[0:self._max_word_part_len]
+            while len(part) > 0:
+                combo_list.extend(self._word_parts.get(part, ()))
+                part = part[:-1]
+            if len(combo_list) == 0:
+                return ()
+            # First try to extend current stroke.
+            part = None
+            if stroke_list:
+                stroke = stroke_list[-1]
+                for combo in combo_list:
+                    if stroke.is_prefix(combo):
+                        # Check if we're not changing the translation.
+                        combo_part = self.strokes_to_text((combo,))
+                        wanted = self.strokes_to_text((stroke,)) + combo_part
+                        result = self.strokes_to_text((stroke + combo,))
+                        if wanted != result:
+                            continue
+                        part = combo_part
+                        stroke_list[-1] += combo
+                        part_list[-1] += part
+                        break
+            # Start a new stroke
+            if part is None:
+                combo = combo_list[0]
+                part = self.strokes_to_text((combo,))
+                stroke_list.append(combo)
+                part_list.append(part)
+            assert len(part) > 0
+            leftover_text = leftover_text[len(part):]
+        assert len(stroke_list) == len(part_list)
+        return stroke_list
