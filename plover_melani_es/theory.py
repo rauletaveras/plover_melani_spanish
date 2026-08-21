@@ -30,6 +30,21 @@ class Theory:
         self._max_word_part_len = 0
 
         # `fragments`` is a dictionary mapping steno combos to translations.
+        fragments = self.get_theory_map(fragments)
+
+        # Assign values to `self._combos` (dict) and `self._max_combos_len` (int).
+        # `_combos` is a dictionary of type {Stroke:string}, where the strings
+        # are Plover translation language.
+        self.load_combos(fragments)
+
+        # Normalizes translation strings in `_combos` to make them more similar to final translated form.
+        self.normalize_combo_strings()
+
+        # I'm pretty sure this is only used in reverse lookup. Initial inside comments in original.
+        self.sort_word_parts()
+
+    def get_theory_map(self, fragments=None):
+        # `fragments`` is a dictionary mapping steno combos to translations.
         if fragments is None:
             fragments_filename = os.path.join(CONFIG_DIR, 'melani_es_mapping.json')
             if os.path.exists(fragments_filename):
@@ -38,7 +53,9 @@ class Theory:
             else:
                 with resource_stream('plover_melani_es', 'dictionaries/melani_es_mapping.json') as fp:
                     fragments = json.loads(fp.read().decode('utf-8'))
+        return fragments
 
+    def load_combos(self, fragments):
         # Assign values to `self._combos` (dict) and `self._max_combos_len` (int).
         # `_combos` is a dictionary of type {Stroke:string}, where the strings
         # are Plover translation language.
@@ -47,7 +64,8 @@ class Theory:
             assert stroke not in self._combos
             self._combos[stroke] = translation
             self._max_combos_len = max(len(combo) for combo in self._combos) if self._combos else 0
-
+    
+    def normalize_combo_strings(self):
         # Normalizes translation strings in `_combos` to make them more similar to final form.
         for combo, part in self._combos.items():
             if part.endswith(META_ATTACH):
@@ -59,16 +77,16 @@ class Theory:
             else:
                 self._word_parts[part] = (combo,)
 
-        # I'm pretty sure this is only used in reverse lookup. Initial inside comments in original.
-        for part, combo_list in self._word_parts.items():
+    def sort_word_parts(self):
         # We want left combos to be given priority over right ones,
         # e.g. 'R-' over '-R' for 'r'.
+        for part, combo_list in self._word_parts.items():
             self._word_parts[part] = sorted(combo_list)
-            if self._word_parts:
-                self._max_word_part_len = max(len(part) for part in self._word_parts)
-            else:
-                self._max_word_part_len = 0
-
+        if self._word_parts:
+            self._max_word_part_len = max(len(part) for part in self._word_parts)
+        else:
+            self._max_word_part_len = 0
+    
     def translate_stroke(self, stroke):
         """Converts a single stroke into its semi-final text form 
         (passed into `strokes_to_text`)."""
@@ -113,7 +131,7 @@ class Theory:
     def strokes_from_text(self, text):
         if not text:
             return []
-        if text[-1] in 'ieao':
+        if text[-1] in 'ao':
             text = text + ' '
         leftover_text = text
         stroke_list = []
